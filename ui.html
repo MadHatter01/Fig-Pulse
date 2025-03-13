@@ -1,17 +1,35 @@
-<h2>Pulse</h2>
-<div>
-  <span class="emoji" data-emoji="😀">😀</span>
-  <span class="emoji" data-emoji="😣">😣</span>
-  <span class="emoji" data-emoji="🫨">🫨</span>
-  <span class="emoji" data-emoji="🥳">🥳</span>
-</div>
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    span:hover{
+      cursor: pointer;
 
-document.querySelectorAll('.emoji').forEach(emoji =>{
-  emoji.addEventListener('click', ()=>{
-    const value = emoji.getAttribute('data-emoji');
-    parent.postMessage({pluginMessage:{type:'result', value}}, '*');
+    }
+  </style>
+</head>
+<body>
+  <h2>Pulse</h2>
+  <div>
+    <span class="emoji" data-emoji="😀">😀</span>
+    <span class="emoji" data-emoji="😣">😣</span>
+    <span class="emoji" data-emoji="🫨">🫨</span>
+    <span class="emoji" data-emoji="🥳">🥳</span>
+  </div>
+  <script>
+  
+  document.querySelectorAll('.emoji').forEach(emoji =>{
+    emoji.addEventListener('click', ()=>{
+      const value = emoji.getAttribute('data-emoji');
+      parent.postMessage({pluginMessage:{type:'result', value}}, '*');
+    })
   })
-})
+  
+  </script>
+  
+</body>
+</html>
 
-</script>
+
